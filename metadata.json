@@ -1,0 +1,12 @@
+{
+  "name": "igorovic-roles-and-profiles",
+  "version": "0.1.0",
+  "author": "Igor Petrovic",
+  "summary": "Roles and Profiles to use in a puppet environment",
+  "license": "Apache-2.0",
+  "source": "https://github.com/igorovic/puppet_roles_and_profiles",
+  "project_page": "https://github.com/igorovic/puppet_roles_and_profiles",
+  "issues_url": "https://github.com/igorovic/puppet_roles_and_profiles/issues",
+  "dependencies": [],
+  "data_provider": null
+}
