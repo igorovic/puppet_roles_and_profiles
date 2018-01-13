@@ -10,7 +10,7 @@ class profile::python::install (
     package { 'pipenv':
         ensure => 'installed',
         provider => "pip${python_version}",
-        require => Class['profile::python::pipinstallation'],
+        require => Profile::python::pipinstallation["${python_version}"],
     }->
     # create a symlinkg in case it does not exist
     file { '/usr/bin/python':
