@@ -1,1 +1,1 @@
-class rolesandprofiles {}
+class roles_and_profiles {}

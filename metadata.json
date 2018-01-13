@@ -1,5 +1,5 @@
 {
-  "name": "igorovic-rolesandprofiles",
+  "name": "igorovic-roles_and_profiles",
   "version": "0.1.0",
   "author": "Igor Petrovic",
   "summary": "Roles and Profiles to use in a puppet environment",
