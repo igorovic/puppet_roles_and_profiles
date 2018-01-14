@@ -5,9 +5,11 @@
 #
 class profile::python(
     $python_version          = '3',
+    $dev                     = false,
 ){
     class { 'profile::python::install':
         python_version => $python_version,
+        dev            => $dev,
     }
     
 }

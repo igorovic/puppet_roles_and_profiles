@@ -1,8 +1,17 @@
 class profile::python::install (
     $python_version = '3',
+    $dev            = false,
 ){
     package { "python${python_version}":
         ensure => 'installed',
+    }->
+    if $dev {
+        package { "build-essential":
+            ensure => 'installed',
+        }->
+        package { "python${python_version}-dev":
+            ensure => 'installed',
+        }
     }
     include git
     ensure_packages(['curl'], {'ensure'=>'present'})
