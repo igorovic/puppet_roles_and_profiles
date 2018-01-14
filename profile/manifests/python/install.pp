@@ -10,11 +10,18 @@ class profile::python::install (
     package { 'pipenv':
         ensure => 'installed',
         provider => "pip${python_version}",
-        require => Profile::python::pipinstallation["${python_version}"],
+        require => Profile::Python::Pipinstallation["${python_version}"],
     }->
-    # create a symlinkg in case it does not exist
-    file { '/usr/bin/python':
-      ensure => 'link',
-      target => "/usr/bin/python${python_version}",
+    if $::kernel == 'Linux' {
+        # create a symlinkg in case it does not exist
+        file { '/usr/bin/python':
+          ensure => 'link',
+          target => "/usr/bin/python${python_version}",
+        }->
+        #Êexport pipenv environment variable
+        file {"/etc/profile.d/pipenv_vars.sh":
+            content => "export PIPENV_VENV_IN_PROJECT=1",
+            mode    => '755',
+        }
     }
 }
