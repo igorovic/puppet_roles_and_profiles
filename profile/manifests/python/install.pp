@@ -18,7 +18,7 @@ class profile::python::install (
           ensure => 'link',
           target => "/usr/bin/python${python_version}",
         }->
-        #Êexport pipenv environment variable
+        # export pipenv environment variable
         file {"/etc/profile.d/pipenv_vars.sh":
             content => "export PIPENV_VENV_IN_PROJECT=1",
             mode    => '755',

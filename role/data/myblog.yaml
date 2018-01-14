@@ -1,0 +1,8 @@
+---
+# default `postgres` user's password
+database_server::postgresql::postgres_password: "igorovic"
+profile::python::python_version: '3'
+profile::database_server::database_engine: 'postgresql'
+profile::database_server::databases:
+  igorovic:
+    user: igor
