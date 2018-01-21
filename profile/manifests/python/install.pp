@@ -8,7 +8,7 @@ class profile::python::install (
     if $dev {
         package { "build-essential":
             ensure => 'installed',
-            require => Package['python${python_version}'],
+            require => Package["python${python_version}"],
         }->
         package { "python${python_version}-dev":
             ensure => 'installed',
