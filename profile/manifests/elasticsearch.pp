@@ -1,4 +1,4 @@
-class profile::elastic_search{
+class profile::elasticsearch{
     apt::key { 'puppetlabs':
       source => 'https://artifacts.elastic.co/GPG-KEY-elasticsearch',
       notify => Exec['apt_update'],
