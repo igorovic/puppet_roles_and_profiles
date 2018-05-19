@@ -8,7 +8,7 @@ class profile::elasticsearch{
     }->
       exec { "add-elasticsearch-repo":
       command => '/bin/echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list',
-      onlyif  => "test ! -f /etc/apt/sources.list.d/elastic-6.x.list",
+      onlyif  => "/usr/bin/test ! -f /etc/apt/sources.list.d/elastic-6.x.list",
       notify => Exec['apt_update'],
     }->
     class { 'java':
