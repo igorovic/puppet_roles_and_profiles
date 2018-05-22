@@ -9,6 +9,7 @@
  The idea of a Role:
 * Each node is assigned exactly one role
 * That single role class would be assigned to the node using any node classification method
+* You can switch between roles according to what you want to work on
 
 The role class
 * simply contains a list of include profile:: statements
