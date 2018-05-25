@@ -6,7 +6,9 @@ class profile::elasticsearch{
     #   install #> puppet module install puppetlabs-java -i "$(puppet config print environmentpath)/$(puppet config print environment)/modules"
     include ::java
 
-    class { 'elasticsearch': }
+    class { 'elasticsearch':
+      api_host                => "$::ipaddress",
+    }
     elasticsearch::instance { 'es-01':
       status => 'running',
     }
