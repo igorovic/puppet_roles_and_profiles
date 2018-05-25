@@ -11,5 +11,6 @@ class profile::elasticsearch{
     }
     elasticsearch::instance { 'es-01':
       status => 'running',
+      config => { 'network.host' => '0.0.0.0' }, # not good for production 
     }
 }
